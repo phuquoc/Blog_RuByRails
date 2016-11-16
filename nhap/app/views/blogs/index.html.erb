@@ -1,0 +1,29 @@
+<h1>Article Index</h1>
+<%= link_to 'New Blog', new_blog_path %>
+<table>
+  <tr>
+    <th>#</th>
+    <th>title</th>
+    <th>content</th>
+    <th>created at</th>
+    <th>updated at</th>
+    <th> action </th>
+  </tr>
+  <% @blogs.each do |blog| %>
+  <tr>
+    <td><%= blog.id %></td>
+    <td><%= blog.title %></td>
+    <td><%= blog.content %></td>
+    <td><%= blog.created_at %></td>
+    <td><%= blog.updated_at %></td>
+    <td>
+      <%= link_to "Show", blog_path(blog.id)  %>
+      <%= link_to "Edit", edit_blog_path(blog.id)  %>
+      <%= link_to 'Destroy', blog_path(blog.id),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+    </td>
+
+  </tr>
+  <% end %>
+</table>
