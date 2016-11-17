@@ -5,9 +5,30 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+
+    <nav class="navbar navbar-light bg-faded">
+  <a class="navbar-brand" href="#">Blog Application By Nho and Quoc</a>
+  <ul class="nav navbar-nav">
+    <li class="nav-item active">
+      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+    </li>
+    <li class="nav-item">
+
+      <%= link_to  "Say Hello", hello_path, class: 'nav-link' %>
+    <!--  <a class="nav-link" href="#">Say Hello</a> -->
+    </li>
+    <li class="nav-item">
+      <%= link_to "Aritcles", blogs_path, class: 'nav-link' %>
+    <!--  <a class="nav-link" href="/blogs">Article</a> -->
+    </li>
+
+  </ul>
+</nav>
+
     <%= yield %>
   </body>
 </html>
