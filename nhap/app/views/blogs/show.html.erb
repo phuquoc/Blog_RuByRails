@@ -1,2 +1,20 @@
 title: <%= @article.title %> </br>
-content : <%= @article.content %>
+content : <%= @article.content %> </br>
+
+<% if @article.comments.count == 0 %>
+<strong> No comments </strong>
+<% else %>
+Number of comments: <%= @article.comments.count %> </br>
+
+
+<strong> Comments </strong>
+<ul>
+<% @article.comments.each do |comment| %>
+  <li>
+    <%=comment.id%> - <%=comment.content%>
+
+
+  </li>
+<% end %>
+</ul>
+<% end %>

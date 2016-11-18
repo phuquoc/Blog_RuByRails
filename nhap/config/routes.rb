@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'comment/create'
+
   #get '/blogs', to: 'blogs#index'
   resources :blogs, only: [:index, :new, :create,
   :show, :edit, :update,:destroy]
